@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZAMON MUSIC-B</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BANNER -->
+<header id="banner">
+  ZAMON MUSIC-B 🎵
+</header>
+
+<!-- MENU -->
+<nav>
+  <a href="#">Rap</a>
+  <a href="#">Bas</a>
+  <a href="#">Xit</a>
+  <a href="#">Euro</a>
+  <a href="#">Russian</a>
+  <a href="#">O‘zbek</a>
+  <a href="#">Top Rec</a>
+</nav>
+
+<div class="container">
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel">
+  <h3>Admin Panel</h3>
+
+  <label>Banner rasmi:</label>
+  <input type="file" id="bannerInput">
+
+  <label>Profil rasmi:</label>
+  <input type="file" id="profileInput">
+
+  <label>Bio matni:</label>
+  <input type="text" id="bioInput" placeholder="Bio yozing...">
+
+  <button onclick="updateSite()">Saqlash</button>
+</div>
+
+<!-- PROFIL -->
+<img src="images/profile.png" id="profileImg" class="profile-img">
+<p id="bio" class="bio">
+Abduganiyev O — ZAMON MUSIC-B  
+Eng kuchli va trend musiqalar platformasi 🎧
+</p>
+
+<!-- 🔥 FAQAT BITTA BO‘LIM -->
+<section class="category">
+<h2>⭐ SIZGA YOQADI</h2>
+
+<div class="songs">
+
+  <div class="song-card">
+    <img src="images/mix1.jpg">
+    <h3>G`aybulla Tursunov-Janona</h3>
+    <audio controls src="audio/mix1.mp3"></audio>
+  </div>
+
+  <div class="song-card">
+    <img src="images/mix2.jpg">
+    <h3>Miyagi-Kosondra</h3>
+    <audio controls src="audio/mix2.mp3"></audio>
+  </div>
+
+  <div class="song-card">
+  <img src="images/mix3.jpg">
+  <h3>Miyagi-Marmelade</h3>
+  <audio controls src="audio/mix3.mp3"></audio>
+</div>
+
+<div class="song-card">
+  <img src="images/mix4.jpg">
+  <h3>Adam-Zhurek</h3>
+  <audio controls src="audio/mix3.mp3"></audio>
+</div>
+
+<div class="song-card">
+  <img src="images/mix5.jpg">
+  <h3>MuhammadZiyo-Labidan</h3>
+  <audio controls src="audio/mix3.mp3"></audio>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<script>
+function updateSite() {
+  const banner = document.getElementById("bannerInput").files[0];
+  const profile = document.getElementById("profileInput").files[0];
+  const bio = document.getElementById("bioInput").value;
+
+  if (banner) {
+    document.getElementById("banner").style.backgroundImage =
+      "url(" + URL.createObjectURL(banner) + ")";
+  }
+
+  if (profile) {
+    document.getElementById("profileImg").src =
+      URL.createObjectURL(profile);
+  }
+
+  if (bio.trim() !== "") {
+    document.getElementById("bio").innerText = bio;
+  }
+
+  alert("O‘zgarishlar saqlandi (brauzer ichida)");
+}
+</script>
+
+</body>
+</html>
